@@ -79,6 +79,7 @@ class MediaType {
   }
 
   static const MediaType image = MediaType._internal('image');
+  static const MediaType audio = MediaType._internal('audio');
   static const MediaType video = MediaType._internal('video');
   static const MediaType file = MediaType._internal('file');
 }

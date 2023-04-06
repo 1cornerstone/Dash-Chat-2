@@ -53,6 +53,7 @@ class DashChat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+
         Expanded(
           child: MessageList(
             currentUser: currentUser,
