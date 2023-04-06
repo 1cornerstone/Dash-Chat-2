@@ -73,6 +73,8 @@ class MediaType {
         return MediaType.video;
       case 'file':
         return MediaType.file;
+      case 'audio':
+        return MediaType.audio;
       default:
         throw UnsupportedError('$value is not a valid MediaType');
     }
