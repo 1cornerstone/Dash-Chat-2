@@ -225,6 +225,7 @@ class _InputToolbarState extends State<InputToolbar>
   void _sendMessage() {
     if (textController.text.isNotEmpty) {
       final ChatMessage message = ChatMessage(
+        id: const Uuid().v1(),
         text: textController.text,
         user: widget.currentUser,
         createdAt: DateTime.now(),
