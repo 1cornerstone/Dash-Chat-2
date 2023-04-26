@@ -6,7 +6,7 @@ class ChatMedia {
     required this.url,
     required this.fileName,
     required this.type,
-    this.isUploading = false,
+    this.uploadState = UploadState.done,
     this.uploadedDate,
     this.customProperties,
   });
@@ -35,7 +35,7 @@ class ChatMedia {
   MediaType type;
 
   /// If the media is still uploading, usefull to add a visual feedback
-  bool isUploading;
+  UploadState uploadState;
 
   /// Uploaded date of the media
   DateTime? uploadedDate;
@@ -51,7 +51,7 @@ class ChatMedia {
       'url': url,
       'type': type.toString(),
       'fileName': fileName,
-      'isUploading': isUploading,
+      'uploadState': uploadState,
       'uploadedDate': uploadedDate?.toUtc().toIso8601String(),
       'customProperties': customProperties,
     };
@@ -84,4 +84,10 @@ class MediaType {
   static const MediaType audio = MediaType._internal('audio');
   static const MediaType video = MediaType._internal('video');
   static const MediaType file = MediaType._internal('file');
+}
+
+enum UploadState{
+  error,
+  uploading,
+  done
 }
