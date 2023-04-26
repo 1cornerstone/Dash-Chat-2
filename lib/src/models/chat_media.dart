@@ -9,15 +9,17 @@ class ChatMedia {
     this.uploadState = UploadState.done,
     this.uploadedDate,
     this.customProperties,
+    this.isUploading = false
   });
 
   /// Create a ChatMedia instance from json data
   factory ChatMedia.fromJson(Map<String, dynamic> jsonData) {
-    \
+
     return ChatMedia(
       url: jsonData['url'].toString(),
       fileName: jsonData['fileName'].toString(),
       type: MediaType.parse(jsonData['type'].toString()),
+      isUploading: jsonData['isUploading'] = false,
       uploadState: UploadState.values.firstWhere((UploadState element) => element == jsonData['uploadState'], orElse:()=> UploadState.done),
       uploadedDate: jsonData['uploadedDate'] != null
           ? DateTime.parse(jsonData['uploadedDate'].toString()).toLocal()
@@ -36,6 +38,9 @@ class ChatMedia {
   MediaType type;
 
   /// If the media is still uploading, usefull to add a visual feedback
+  bool isUploading;
+
+  /// media uploadState
   UploadState uploadState;
 
   /// Uploaded date of the media
@@ -53,6 +58,7 @@ class ChatMedia {
       'type': type.toString(),
       'fileName': fileName,
       'uploadState': uploadState,
+      'isUploading': isUploading,
       'uploadedDate': uploadedDate?.toUtc().toIso8601String(),
       'customProperties': customProperties,
     };
