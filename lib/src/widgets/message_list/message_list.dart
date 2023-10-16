@@ -60,6 +60,7 @@ class _MessageListState extends State<MessageList> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+
               Expanded(
                 child: ListView.builder(
                   physics: widget.messageListOptions.scrollPhysics,
@@ -81,7 +82,8 @@ class _MessageListState extends State<MessageList> {
                       isBeforeDateSeparator = _shouldShowDateSeparator(
                           message, nextMessage, widget.messageListOptions);
                     }
-                    return Column(
+
+                    return widget.messages[i].isWidget ?  widget.messages[i].child! :   Column(
                       children: <Widget>[
                         if (isAfterDateSeparator)
                           widget.messageListOptions.dateSeparatorBuilder != null

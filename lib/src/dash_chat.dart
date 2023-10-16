@@ -14,7 +14,7 @@ class DashChat extends StatelessWidget {
     this.readOnly = false,
     this.typingUsers,
     this.customToolBar,
-    Key? key,
+    Key? key, this.header,
   }) : super(key: key);
 
   /// The current user of the chat
@@ -49,11 +49,12 @@ class DashChat extends StatelessWidget {
   /// List of users currently typing in the chat
   final List<ChatUser>? typingUsers;
 
+  final Widget? header;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-
         Expanded(
           child: MessageList(
             currentUser: currentUser,

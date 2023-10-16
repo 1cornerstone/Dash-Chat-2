@@ -25,6 +25,7 @@ class _QuickRepliesSampleState extends State<QuickRepliesSample> {
         },
         quickReplyOptions: QuickReplyOptions(onTapQuickReply: (QuickReply r) {
           final ChatMessage m = ChatMessage(
+            id: "",
             user: user,
             text: r.value ?? r.title,
             createdAt: DateTime.now(),

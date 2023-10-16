@@ -1,4 +1,5 @@
 import 'package:dash_chat_2/dash_chat_2.dart';
+import 'package:flutter/cupertino.dart';
 
 String profileImage =
     'https://firebasestorage.googleapis.com/v0/b/molteo-40978.appspot.com/o/1-intro-photo-final.jpeg?alt=media&token=daf78997-d8f0-49d1-9120-a9380bde48b5';
@@ -61,14 +62,21 @@ List<ChatMessage> allUsersSample = <ChatMessage>[
 ];
 
 List<ChatMessage> basicSample = <ChatMessage>[
+
   ChatMessage(
-    text: 'google.com hello you @Marc is it &you okay?',
+    text: 'google.com',
     user: user2,
-    createdAt: DateTime(2021, 01, 31, 16, 45),
-    mentions: [
-      Mention(title: '@Marc'),
-      Mention(title: '&you'),
-    ],
+    createdAt: DateTime(2021, 01, 30, 16, 45),
+  ),
+  ChatMessage(
+    text: 'google.com',
+    user: user2,
+    createdAt: DateTime(2021, 01, 30, 16, 45),
+  ),
+  ChatMessage(
+    text: 'google.com',
+    user: user2,
+    createdAt: DateTime(2021, 01, 30, 16, 45),
   ),
   ChatMessage(
     text: 'google.com',
@@ -99,6 +107,77 @@ List<ChatMessage> basicSample = <ChatMessage>[
     text: 'Hey!',
     user: user,
     createdAt: DateTime(2021, 01, 28, 15, 50),
+  ),
+  ChatMessage(
+    text: 'Hey!',
+    user: user,
+    createdAt: DateTime(2021, 01, 28, 15, 50),
+  ),
+  ChatMessage(
+    text: 'Hey!',
+    user: user,
+    createdAt: DateTime(2021, 01, 28, 15, 50),
+  ),
+  ChatMessage(
+      isWidget: true,
+      child: Column(
+        children: [
+          SizedBox(height: 10),
+          Text(
+            'Ex-KPMG | Experience Designer. Conflict Resolution Fanatic. Human Rights Advocate. Educator - Civic rights and stem. Team #Design and #Dodo❤️ #UxGist',
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 5),
+          Row(
+              mainAxisAlignment:
+              MainAxisAlignment.spaceEvenly,
+              children: [
+                GestureDetector(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        children: [
+                          Text('0',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold)),
+                          SizedBox(width: 2),
+                          Text('Following')
+                        ],
+                      ),
+                    )),
+                GestureDetector(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        children: [
+                          Text('0',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold)),
+                          SizedBox(width: 2),
+                          Text('Followers')
+                        ],
+                      ),
+                    )),
+                GestureDetector(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        children: [
+                          Text('0',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold)),
+                          SizedBox(width: 2),
+                          Text('Posts')
+                        ],
+                      ),
+                    )),
+              ]),
+          SizedBox(height: 5),
+          Text('Joined August 2023'),
+          SizedBox(height: 20),
+        ],
+      ),
+      user: user2, createdAt: DateTime.now()
   ),
 ];
 
