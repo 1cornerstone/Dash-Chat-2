@@ -64,7 +64,7 @@ List<ChatMessage> allUsersSample = <ChatMessage>[
 List<ChatMessage> basicSample = <ChatMessage>[
 
   ChatMessage(
-    text: 'google.com',
+    text: 'https://google.com',
     user: user2,
     createdAt: DateTime(2021, 01, 30, 16, 45),
   ),
@@ -74,10 +74,11 @@ List<ChatMessage> basicSample = <ChatMessage>[
     createdAt: DateTime(2021, 01, 30, 16, 45),
   ),
   ChatMessage(
-    text: 'google.com',
+    text: 'www.man.com',
     user: user2,
     createdAt: DateTime(2021, 01, 30, 16, 45),
   ),
+
   ChatMessage(
     text: 'google.com',
     user: user2,
