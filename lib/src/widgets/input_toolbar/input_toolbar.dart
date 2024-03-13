@@ -208,7 +208,7 @@ class _InputToolbarState extends State<InputToolbar>
               ),
             ),
             child: Material(
-              color: Theme.of(context).selectedRowColor,
+              color: Theme.of(context).primaryColor,
               child: SingleChildScrollView(
                 child: Column(
                   children: children,
